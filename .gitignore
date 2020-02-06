@@ -32,7 +32,7 @@ yarn-error.log*
 
 # production
 */build
-keys.js
+dev.js
 
 # misc
 *.DS_Store
