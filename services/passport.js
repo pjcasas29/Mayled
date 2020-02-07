@@ -18,8 +18,7 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL:
-        "https://calm-stream-81326.herokuapp.com/auth/google/callback",
+      callbackURL: "/auth/google/callback",
       proxy: true
     },
     (accessToken, refreshToken, profile, done) => {
