@@ -8,7 +8,7 @@ class Header extends React.Component {
           <a href="#" className="brand-logo left">
             Emaily
           </a>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <ul className="right hide-on-med-and-down">
             <li>
               <a>Login with google</a>
             </li>

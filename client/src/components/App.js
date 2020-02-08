@@ -1,15 +1,19 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Header from "./Header";
-
+import { connect } from "react-redux";
+import * as actions from "../actions";
 const Dashboard = () => <h2>Dashboard</h2>;
 const SurveyNew = () => <h2>SurveyNew</h2>;
 const Landing = () => <h2>Landing</h2>;
 
 class App extends React.Component {
+  componentDidMount() {
+    this.props.fetchUser();
+  }
   render() {
     return (
-      <div className="Container">
+      <div className="container">
         <BrowserRouter>
           <div>
             <Header />
@@ -23,4 +27,11 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  actions
+)(App);
