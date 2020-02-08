@@ -1,8 +1,25 @@
 import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import Header from "./Header";
+
+const Dashboard = () => <h2>Dashboard</h2>;
+const SurveyNew = () => <h2>SurveyNew</h2>;
+const Landing = () => <h2>Landing</h2>;
 
 class App extends React.Component {
   render() {
-    return <div>App</div>;
+    return (
+      <div className="Container">
+        <BrowserRouter>
+          <div>
+            <Header />
+            <Route path="/" exact component={Landing} />
+            <Route path="/surveys" exact component={Dashboard} />
+            <Route path="/surveys/new" exact component={SurveyNew} />
+          </div>
+        </BrowserRouter>
+      </div>
+    );
   }
 }
 
