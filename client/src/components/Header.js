@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { logout } from "./../actions";
+import { Link } from "react-router-dom";
 class Header extends React.Component {
   userLogout = () => {
     this.props.logout();
@@ -27,7 +28,12 @@ class Header extends React.Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <a className="brand-logo left">Emaily</a>
+          <Link
+            to={this.props.user ? "/surveys" : "/"}
+            className="brand-logo left"
+          >
+            Emaily
+          </Link>
           <ul className="right">{this.renderContent()}</ul>
         </div>
       </nav>
