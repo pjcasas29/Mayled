@@ -1,6 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
+import { logout } from "./../actions";
 class Header extends React.Component {
+  userLogout = () => {
+    this.props.logout();
+  };
   renderContent() {
     switch (this.props.auth) {
       case null:
@@ -14,7 +18,7 @@ class Header extends React.Component {
       default:
         return (
           <li>
-            <a href="">Logout</a>
+            <a onClick={this.userLogout}>Logout</a>
           </li>
         );
     }
@@ -35,4 +39,7 @@ const mapStateToProps = ({ auth }) => {
   return { auth };
 };
 
-export default connect(mapStateToProps)(Header);
+export default connect(
+  mapStateToProps,
+  { logout }
+)(Header);
