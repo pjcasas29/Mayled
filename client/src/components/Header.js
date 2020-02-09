@@ -19,7 +19,7 @@ class Header extends React.Component {
       default:
         return (
           <li>
-            <a onClick={this.userLogout}>Logout</a>
+            <div onClick={this.userLogout}>Logout</div>
           </li>
         );
     }
@@ -29,7 +29,7 @@ class Header extends React.Component {
       <nav>
         <div className="nav-wrapper">
           <Link
-            to={this.props.user ? "/surveys" : "/"}
+            to={this.props.auth ? "/surveys" : "/"}
             className="brand-logo left"
           >
             Emaily
