@@ -4,9 +4,10 @@ import { logout } from "./../actions";
 import { Link } from "react-router-dom";
 import Payments from "./Payments";
 class Header extends React.Component {
-  userLogout = () => {
+  userLogout() {
     this.props.logout();
-  };
+  }
+
   renderContent() {
     switch (this.props.auth) {
       case null:
@@ -31,6 +32,7 @@ class Header extends React.Component {
         ];
     }
   }
+
   render() {
     return (
       <nav>
@@ -39,7 +41,7 @@ class Header extends React.Component {
             to={this.props.auth ? "/surveys" : "/"}
             className="brand-logo left"
           >
-            Emaily
+            Mayled
           </Link>
           <ul className="right">{this.renderContent()}</ul>
         </div>
