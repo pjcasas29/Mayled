@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { logout } from "./../actions";
+import * as actions from "./../actions";
 import { Link } from "react-router-dom";
 import Payments from "./Payments";
+
 class Header extends React.Component {
-  userLogout() {
+  userLogout = () => {
     this.props.logout();
-  }
+  };
 
   renderContent() {
     switch (this.props.auth) {
@@ -56,5 +57,5 @@ const mapStateToProps = ({ auth }) => {
 
 export default connect(
   mapStateToProps,
-  { logout }
+  actions
 )(Header);
